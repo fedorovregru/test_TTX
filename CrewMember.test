@@ -1,0 +1,15 @@
+#!/usr/bin/perl
+
+use Modern::Perl;
+use Data::Dumper;
+
+use CrewMember;
+
+my $obj1 = CrewMember->new();
+my $obj2 = CrewMember->new();
+
+$obj1->fio( 'Пафнутий Иванович Сидоров' );
+$obj2->fio( 'Петр Васильевич Грядкин' );
+
+print $obj1->fio . "\n";
+print $obj2->fio . "\n";
