@@ -37,7 +37,7 @@ sub AUTOLOAD {
 	return $self->{$name} unless $value;
 	
 	# проверка валидности поля fio
-	if ( $name =~ m/::fio$/ && !( $value =~ m/^.+\s.+\s.+$/ ) ) {
+	if ( $name =~ m/::fio$/ && !( $value =~ m/^\w+\s\w+\s\w+$/ ) ) {
 		print "ФИО должно быть в три слова, через пробел.\n";
 		return $self->{$name};
 	}
