@@ -1,3 +1,4 @@
+# Класс "Член экипажа"
 package CrewMember;
 
 use utf8;

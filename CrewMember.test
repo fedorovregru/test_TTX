@@ -8,6 +8,8 @@ use open qw(:std :utf8);
 
 use CrewMember;
 
+# тестовый прогон двух объектов класса
+
 my $obj1 = CrewMember->new();
 my $obj2 = CrewMember->new();
 
