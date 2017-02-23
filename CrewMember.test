@@ -13,17 +13,11 @@ use CrewMember;
 my $obj1 = CrewMember->new();
 my $obj2 = CrewMember->new();
 
-$obj1->fio('Пафнутий Иванович ');
-$obj1->rank('майор ');
-$obj1->profession('1командир');
-$obj1->service_time('temp');
-$obj1->vehicle_type('Объект-600');
-
-$obj2->fio('Петр Васильевич Грядкин');
-$obj2->rank('прапорщик');
-$obj2->profession('механик-водитель');
-$obj2->service_time('2');
-$obj2->vehicle_type('Объект-120');
+$obj1->fio('Петр Васильевич Грядкин');
+$obj1->rank('прапорщик');
+$obj1->profession('механик-водитель');
+$obj1->service_time('2');
+$obj1->vehicle_type('Объект-120');
 
 print $obj1->fio          . "\n";
 print $obj1->rank         . "\n";
@@ -32,9 +26,4 @@ print $obj1->service_time . "\n";
 print $obj1->vehicle_type . "\n";
 print "\n";
 
-print $obj2->fio          . "\n";
-print $obj2->rank         . "\n";
-print $obj2->profession   . "\n";
-print $obj2->service_time . "\n";
-print $obj2->vehicle_type . "\n";
-print "\n";
+$obj2->service_time('temp');
