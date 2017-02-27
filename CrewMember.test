@@ -1,0 +1,28 @@
+#!/usr/bin/perl
+
+use Modern::Perl;
+use Data::Dumper;
+
+use utf8;
+use open qw(:std :utf8);
+
+use CrewMember;
+
+# тестовый прогон двух объектов класса
+
+my $obj1 = CrewMember->new();
+my $obj2 = CrewMember->new();
+
+$obj1->fio('Петр Васильевич Грядкин');
+$obj1->rank('прапорщик');
+$obj1->profession('механик-водитель');
+$obj1->service_time('2');
+$obj1->vehicle_type('Объект-120');
+
+say $obj1->fio;
+say $obj1->rank;
+say $obj1->profession;
+say $obj1->service_time;
+say $obj1->vehicle_type;
+
+$obj2->service_time('temp');
