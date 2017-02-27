@@ -19,11 +19,10 @@ $obj1->profession('механик-водитель');
 $obj1->service_time('2');
 $obj1->vehicle_type('Объект-120');
 
-print $obj1->fio          . "\n";
-print $obj1->rank         . "\n";
-print $obj1->profession   . "\n";
-print $obj1->service_time . "\n";
-print $obj1->vehicle_type . "\n";
-print "\n";
+say $obj1->fio;
+say $obj1->rank;
+say $obj1->profession;
+say $obj1->service_time;
+say $obj1->vehicle_type;
 
 $obj2->service_time('temp');

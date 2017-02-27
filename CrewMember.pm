@@ -9,10 +9,10 @@ sub new {
 	
 	my $class = ref($invocant) || $invocant;
 	my $self  = { { fio          => '',
-		            rank         => '',
-		            profession   => '',
-		            service_time => '',
-		            vehicle_type => '' }, @_ };
+		        rank         => '',
+		        profession   => '',
+		        service_time => '',
+		        vehicle_type => '' }, @_ };
 	
 	return bless $self, $class;
 }
