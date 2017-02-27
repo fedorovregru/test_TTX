@@ -27,25 +27,28 @@ sub AUTOLOAD {
     # выход из метода если вызван метод DESTROY
     return if $name =~ m/::DESTROY$/;
 
-    # отдаем значение поля если нет входных параметров
-    return $self->{$name} unless $value;
+    # проверяем значение поля если имеется $value
+    if ( $value ) {
+        
+        # хеш для валидации значений
+        my %fields_validation_hash = (
+            fio          => '^\w+\s\w+\s\w+$',
+            rank         => '^\w+$',
+            profession   => '^(командир|механик-водитель|наводчик|заряжающий|радист)$',
+            service_time => '^\d+$',
+            vehicle_type => '.+'
+        );
 
-    # хеш для валидации значений
-    my %fields_validation_hash = (
-        fio          => '^\w+\s\w+\s\w+$',
-        rank         => '^\w+$',
-        profession   => '^(командир|механик-водитель|наводчик|заряжающий|радист)$',
-        service_time => '^\d+$',
-        vehicle_type => '.+'
-    );
+        # проверка валидности поля
+        $name =~ m/::(\w+)$/;
+        my $regexp = $fields_validation_hash{$1};
+        die "Попытка записи некорректных данных в поле $1!\n"
+            unless $value =~ m/$regexp/;
 
-    # проверка валидности поля
-    $name =~ m/::(\w+)$/;
-    my $regexp = $fields_validation_hash{$1};
-    die "Попытка записи некорректных данных в поле $1!\n"
-        unless $value =~ m/$regexp/;
+        return $self->{$name} = $value;
+    }
 
-    return $self->{$name} = $value;
+    return $self->{$name};
 }
 
 return 1;
